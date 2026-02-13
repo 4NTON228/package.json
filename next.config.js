@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export', // <--- ЭТА СТРОКА КРИТИЧЕСКИ ВАЖНА ДЛЯ NETLIFY
+  images: {
+    unoptimized: true, // <--- ОТКЛЮЧАЕТ ОПТИМИЗАЦИЮ КАРТИНОК ДЛЯ СТАТИКИ
+  },
 }
 
 module.exports = nextConfig
