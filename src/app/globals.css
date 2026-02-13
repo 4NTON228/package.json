@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Анимация плавающих сердечек */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float linear forwards;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Пульсация для сердечка */
+@keyframes pulse-heart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+/* Глобальные стили */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Скрытие скроллбара но сохранение функциональности */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Стили для карточек */
+.card {
+  @apply bg-white rounded-2xl shadow-lg p-4 transition-all hover:shadow-xl;
+}
+
+/* Кнопка с градиентом */
+.btn-gradient {
+  @apply bg-gradient-to-r from-pink-400 to-pink-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all;
+}
+
+/* Инпут с фокусом */
+.input-focus {
+  @apply w-full px-4 py-3 rounded-xl border-2 border-pink-200 focus:border-pink-400 outline-none transition-colors;
+}
