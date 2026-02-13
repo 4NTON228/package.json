@@ -1,9 +1,11 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-  output: 'export', // <--- ЭТА СТРОКА КРИТИЧЕСКИ ВАЖНА ДЛЯ NETLIFY
+  reactivityMode: 'none',
   images: {
-    unoptimized: true, // <--- ОТКЛЮЧАЕТ ОПТИМИЗАЦИЮ КАРТИНОК ДЛЯ СТАТИКИ
+    unoptimized: true,
   },
-}
+};
 
 module.exports = nextConfig
